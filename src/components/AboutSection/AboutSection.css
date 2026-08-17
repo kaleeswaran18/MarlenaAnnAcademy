@@ -1,0 +1,322 @@
+.why-trust {
+  position: relative;
+  overflow: hidden;
+}
+
+.why-trust-content {
+  text-align: left;
+}
+
+/* subtle brand-consistent background glow — same visual language
+   used in the Footer, kept very low-opacity so it never competes
+   with content */
+.why-trust-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 38% 46% at 6% 6%, rgba(214, 40, 40, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 32% 40% at 94% 94%, rgba(249, 115, 22, 0.045) 0%, transparent 60%);
+}
+
+.why-trust .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ======================================
+   Trust Stats Strip
+====================================== */
+
+.founder-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(20px, 3.4vw, 40px);
+  margin: clamp(32px, 4.4vw, 44px) auto clamp(40px, 5.4vw, 56px);
+  padding: clamp(20px, 2.4vw, 28px) clamp(22px, 3.2vw, 34px);
+  max-width: 920px;
+  background: var(--white);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: var(--radius-lg, 20px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    var(--shadow-soft, 0 10px 30px rgba(0, 0, 0, 0.05));
+}
+
+.founder-stat {
+  flex: 1 1 120px;
+  min-width: 110px;
+  position: relative;
+  text-align: center;
+  padding: 0 14px;
+}
+
+.founder-stat:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.founder-stat-value {
+  display: block;
+  font-size: clamp(1.5rem, 2.7vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: var(--theme-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.founder-stat-label {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ======================================
+   Founder Layout
+====================================== */
+
+.founder-layout {
+  margin-top: clamp(48px, 6.5vw, 72px);
+}
+
+.founder-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(28px, 4.5vw, 48px);
+  align-items: center;
+  margin-bottom: clamp(32px, 5.5vw, 56px);
+}
+
+.founder-media {
+  width: 100%;
+}
+
+.media-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.14),
+    0 18px 45px rgba(0, 0, 0, .08);
+  transition: box-shadow .35s ease;
+}
+
+.media-frame:hover {
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.22),
+    0 26px 58px rgba(0, 0, 0, .14);
+}
+
+.media-frame img,
+.founder-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/10;
+  transition: transform .6s ease;
+}
+
+.media-frame:hover img,
+.media-frame:hover .founder-video {
+  transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .founder-video {
+    height: auto;
+  }
+}
+
+/* ======================================
+   Cards
+====================================== */
+
+.card-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.4vw, 24px);
+}
+
+.pillar-card {
+  display: flex;
+  gap: 20px;
+  padding: clamp(20px, 2.6vw, 26px);
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, .06);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .05);
+  transition: box-shadow .35s ease, transform .35s ease, border-color .35s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, .09);
+  border-color: rgba(214, 40, 40, .14);
+}
+
+.pillar-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: var(--theme-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 18px rgba(214, 40, 40, 0.22);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.pillar-card:hover .pillar-icon {
+  transform: scale(1.06);
+  box-shadow: 0 10px 22px rgba(214, 40, 40, 0.3);
+}
+
+.pillar-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.pillar-card h4 {
+  margin: 0 0 12px;
+  font-size: clamp(19px, 1.8vw, 21px);
+  font-weight: 700;
+  color: #1f2430;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.pillar-card p {
+  margin: 0;
+  max-width: 56ch;
+  color: #4b4b4b;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  font-size: 15px;
+}
+
+/* ======================================
+   CTA
+====================================== */
+
+.founder-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: clamp(32px, 4vw, 44px);
+}
+
+/* ======================================
+   Tablet
+====================================== */
+
+@media (max-width: 991px) {
+
+  .why-trust-content {
+    text-align: center;
+  }
+
+  .founder-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .media-frame {
+    max-width: 650px;
+    margin: auto;
+  }
+
+  .card-column {
+    max-width: 650px;
+    margin: auto;
+    width: 100%;
+  }
+
+}
+
+/* ======================================
+   Mobile
+====================================== */
+
+@media (max-width: 576px) {
+
+  .founder-layout {
+    margin-top: 44px;
+  }
+
+  .founder-row {
+    gap: 22px;
+    margin-bottom: 32px;
+  }
+
+  .media-frame {
+    border-radius: 24px;
+  }
+
+  .pillar-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .pillar-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .pillar-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pillar-card h4 {
+    font-size: 18px;
+    margin-bottom: 9px;
+  }
+
+  .pillar-card p {
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  .founder-stats {
+    gap: 18px 10px;
+  }
+
+  .founder-stat {
+    flex: 1 1 45%;
+  }
+
+  .founder-stat:nth-child(2)::after {
+    display: none;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillar-card,
+  .pillar-icon,
+  .media-frame,
+  .media-frame img,
+  .founder-video {
+    transition: none !important;
+  }
+}

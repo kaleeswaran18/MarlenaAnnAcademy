@@ -17,7 +17,7 @@ const pillars = [
   {
     title: "Marlena Ann Academy",
     text: "Focused on empowering young people through career opportunities, skill development, entrepreneurship, and industry exposure, helping the next generation become financially independent and future-ready.",
-    icon: "Academy",
+    icon: "academy",
   },
   {
     title: "People's Welfare",
@@ -50,8 +50,74 @@ const statReveal = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } },
 };
 
-function PillarIcon({ type }) { const icons = { hospital: ( <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"> <path d="M7 3v18M17 3v18M5 7h14M5 21h14M10 10h4M12 8v4M9 21v-4h6v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /> </svg> ), academy: ( <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"> <path d="M2 9l10-5 10 5-10 5-10-5z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /> <path d="M6 11v4c0 2 3 4 6 4s6-2 6-4v-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /> </svg> ), heart: ( <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"> <path d="M12 21s-7-4.6-9-9c-1.2-2.8.4-6 3.7-6 2 0 3.2 1 4.3 2.6C12.1 7 13.3 6 15.3 6c3.3 0 4.9 3.2 3.7 6-2 4.4-9 9-9 9z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /> <path d="M12 9v6M9 12h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /> </svg> ), vision: ( <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"> <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" strokeWidth="1.8" /> <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.8" /> </svg> ), }; return <span className="pillar-icon">{icons[type]}</span>; }
+function PillarIcon({ type }) {
+  const icons = {
+    business: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M3 21h18M5 21V8h14v13M8 8V5h8v3M9 12h2M13 12h2M9 16h2M13 16h2"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
 
+    academy: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M2 9l10-5 10 5-10 5-10-5z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M6 11v4c0 2 3 4 6 4s6-2 6-4v-4"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+
+    heart: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 21s-7-4.6-9-9c-1.2-2.8.4-6 3.7-6 2 0 3.2 1 4.3 2.6C12.1 7 13.3 6 15.3 6c3.3 0 4.9 3.2 3.7 6-2 4.4-9 9-9 9z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12 9v6M9 12h6"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+
+    vision: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          r="3"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+      </svg>
+    ),
+  };
+
+  return <span className="pillar-icon">{icons[type]}</span>;
+}
 function PillarCard({ pillar, delay, isInView }) {
   return (
     <motion.div
@@ -136,7 +202,7 @@ export default function AboutSection() {
                   className="founder-video"
                 >
                   <source
-                    src="https://res.cloudinary.com/dbrymrvqu/video/upload/v1781502385/Create_a_cinematic_AI_animatio_om745e.mp4"
+                    src="https://res.cloudinary.com/dbrymrvqu/video/upload/v1787018355/WhatsApp_Video_2026-08-18_at_7.27.04_AM_jv8miy.mp4"
                     type="video/mp4"
                   />
                 </video>
